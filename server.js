@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 
 app.use(
   cors({
-    origin: ["http://localhost:4001", "https://ecombackend01.onrender.com"],
+    origin: ["http://localhost:3000", "https://ecombackend01.onrender.com"],
   })
 );
 
