@@ -1,5 +1,6 @@
 const app = require("./app");
 const dotenv = require("dotenv");
+const cors = require("cors");
 const connectDatabase = require("./config/database");
 // Handling Uncaught Excepions
 process.on("uncaughtException", (err) => {
@@ -20,6 +21,12 @@ connectDatabase();
 app.get("/", (req, res) => {
   res.send("Connection is done by Akash");
 });
+
+app.use(
+  cors({
+    origin: ["http://localhost:4001", "https://ecombackend01.onrender.com"],
+  })
+);
 
 const server = app.listen(process.env.PORT, () => {
   console.log(` Server is working on http://localhost:${process.env.PORT}`);
