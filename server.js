@@ -25,6 +25,10 @@ const server = app.listen(process.env.PORT, () => {
   console.log(` Server is working on http://localhost:${process.env.PORT}`);
 });
 
+// app.listen(4002, function () {
+//   console.log("CORS-enabled web server listening on port 4002");
+// });
+
 // Unhandled Promise rejection
 process.on("unhandledRejection", (err) => {
   console.log(`Error: ${err.message}`);
