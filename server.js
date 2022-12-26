@@ -24,9 +24,10 @@ app.get("/", (req, res) => {
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://ecombackend01.onrender.com"],
+    origin: ["http://localhost:3000","http://ecomfrontend.onrender.com"]
   })
 );
+
 
 const server = app.listen(process.env.PORT, () => {
   console.log(` Server is working on http://localhost:${process.env.PORT}`);
