@@ -22,8 +22,7 @@ app.get("/", (req, res) => {
   res.send("Connection is done by Akash");
 });
 
-app.use(
-  cors()
+app.options("*" , cors()
 );
 
 
