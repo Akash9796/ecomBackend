@@ -17,19 +17,15 @@ dotenv.config({ path: "config/config.env" });
 // Connecting to the database
 
 connectDatabase();
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Connection is done by Akash");
 });
 
-app.options("*" , cors()
-);
-
-
 const server = app.listen(process.env.PORT, () => {
   console.log(` Server is working on http://localhost:${process.env.PORT}`);
 });
-
 
 // Unhandled Promise rejection
 process.on("unhandledRejection", (err) => {
